@@ -18,7 +18,7 @@ class CreateEvenementsTable extends Migration
             $table->string('titre');
             $table->datetime('date');
             $table->text('url_image');
-            $table->boolean('status');
+            $table->string ('status');
             $table->integer('nbr_participants');
             $table->text('description');
             $table->text('lieu');

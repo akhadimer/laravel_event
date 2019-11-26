@@ -47,15 +47,14 @@ class EvenementController extends Controller
      */
     public function store(Request $request)
     {
-        $request = Validator::make($request->all(), [
+        $res = Validator::make($request->all(), [
             'titre' => 'required|max:255',
             'date' => 'required',
-            'status' => 'required',
             'description' => 'required',
             'lieu' => 'required',
         ])->validate();
 
-        Auth::user()->Evenement::create($request->all());
+        Auth::user()->evenements()->create($res);
 
         return redirect()->route('home');
     }

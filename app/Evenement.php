@@ -15,6 +15,12 @@ class Evenement extends Model
         'titre', 'date', 'url_image', 'status', 'description', 'lieu',
     ];
 
+    protected $attributes = [
+        'status' => 'off',
+        'nbr_participants' => 1,
+        'url_image' => '/'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User', 'user_id');
