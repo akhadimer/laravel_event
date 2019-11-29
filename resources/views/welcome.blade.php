@@ -1,3 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Accueil - événements')
+@section('content')
+
+@endsection
