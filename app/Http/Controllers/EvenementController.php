@@ -45,7 +45,7 @@ class EvenementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Evenement $evenement)
     {
         $res = Validator::make($request->all(), [
             'titre' => 'required|max:255',
@@ -65,10 +65,10 @@ class EvenementController extends Controller
      * @param  \App\Evenement  $Evenement
      * @return \Illuminate\Http\Response
      */
-    public function show(Evenement $evenement)
+    public function show(Evenement $evenement)  
     {
         return view('evenements.show', [
-            'evenements' => $evenement
+            'evenement' => $evenement
         ]);
     }
 
@@ -97,13 +97,15 @@ class EvenementController extends Controller
         Validator::make($request->all(), [
             'titre' => 'required|max:255',
             'date' => 'required',
-            'status' => 'required',
             'description' => 'required',
             'lieu' => 'required',
         ])->validate();
 
         $evenement->titre = $request->titre;
-        $evenement->contenu = $request->contenu;
+        $evenement->date = $request->date;
+        $evenement->description = $request->description;
+        $evenement->lieu = $request->lieu;
+        $evenement->url_image = $request->url_image;
         $evenement->save();
 
         return redirect()->route('home')->with('success', 'Evenement Modifié');

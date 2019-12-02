@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group">
                             <label for="date">Date et heure de l'événement</label>
-                            <input class="form-control" type="datetime-local" value="2019-11-25T13:45:00" id="date" name="date">
+                            <input class="form-control" type="datetime-local" id="date" name="date">
                         </div>
                         <button type="submit" class="btn btn-primary">Créer</button>
                     </form>
