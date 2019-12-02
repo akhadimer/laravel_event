@@ -21,4 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('evenements', 'EvenementController');
 
+Route::get('evenements/supprimer/{id}', [
+    'as' => 'delete_event',
+    'uses' => 'EvenementController@destroy'
+]);
+
 Route::get('user/{id}', 'UserController@show');

@@ -2,10 +2,11 @@
 
 @section('content')
 
-<?php 
-use App\User;
-$id= $evenement->user_id;
-// $user = DB::table('evenements')->where('user_id', DB::table('users')->where('id', $id))->get();
+<?php
+Use App\User;
+
+$name_orga = DB::table('users')->where('id', $evenement->user_id)->get();
+dd($name_orga);
 ?>
 
 <div class="container">
@@ -16,15 +17,12 @@ $id= $evenement->user_id;
 
                 <div class="card-body">
                     <div class="d-flex justify-content-around">
-
                         <div style="">
-
-                            <div style="">
+                            <div>
                                 <img src="{{ $evenement->url_image }}" class="img-fluid" style="width :100%; margin-bottom :20px;">
                             </div>
                             <div style="margin-bottom:40px;" class="row justify-content-around">
                                 <div>
-                                    <p>Organisé par : {{ $evenement->user_id }}</p>
                                 </div>
                                 <div>
                                     <p>nombre de participants : {{ $evenement->nbr_participants }}</p>
@@ -45,11 +43,9 @@ $id= $evenement->user_id;
                                 <p>{{ $evenement->description }}</p>
                             </div>
                             <div>
-                                <a href=""><button  type="button" class="btn-block btn-primary">Participer</button></a>
+                                <a href=""><button type="button" class="btn-block btn-primary">Participer</button></a>
                             </div>
                         </div>
-                        
-
                     </div>
                 </div>
             </div>

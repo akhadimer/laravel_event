@@ -117,9 +117,10 @@ class EvenementController extends Controller
      * @param  \App\Evenement  $evenement
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Evenement $evenement)
+    public function destroy($id)
     {
-        $evenement->delete();
-        return redirect()->route('home')->with('success', 'Evenement Supprimé');
+        Evenement::where('id', $id)->delete();
+
+        return redirect()->route('home');
     }
 }

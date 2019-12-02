@@ -3,12 +3,9 @@
 @section('content')
 
 <?php
-
 use App\Evenement;
 
 $evenements = Evenement::where('user_id', Auth::user()->id)->get();
-//$evenements = DB::table('evenements')->where('user_id', Auth::user()->id)->get();
-
 ?>
 
 <div class="row justify-content-center">
@@ -64,7 +61,7 @@ $evenements = Evenement::where('user_id', Auth::user()->id)->get();
                                             <a href="{{ route('evenements.edit', $evenement) }}"><button type="button" class="btn btn-primary">Modifier</button></a>
                                         </div>
                                         <div>
-                                            <a href="{{ route('evenements.destroy', $evenement) }}"><button type="button" class="btn btn-primary">Supprimer</button></a>
+                                            <a href="{{ route('delete_event', $evenement) }}"><button type="button" class="btn btn-primary">Supprimer</button></a>
                                         </div>
                                     </div>
                                     @endforeach
