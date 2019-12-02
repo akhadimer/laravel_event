@@ -3,6 +3,7 @@
 @section('content')
 
 <?php
+
 use App\Evenement;
 
 $evenements = Evenement::where('user_id', Auth::user()->id)->get();

@@ -3,10 +3,10 @@
 @section('content')
 
 <?php
-Use App\User;
 
-$name_orga = DB::table('users')->where('id', $evenement->user_id)->get();
-dd($name_orga);
+use App\User;
+
+$name_orga = User::where('id', $evenement->user_id)->get()->first();
 ?>
 
 <div class="container">
@@ -14,7 +14,6 @@ dd($name_orga);
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header h1 text-center">{{ $evenement->titre }}</div>
-
                 <div class="card-body">
                     <div class="d-flex justify-content-around">
                         <div style="">
@@ -23,6 +22,7 @@ dd($name_orga);
                             </div>
                             <div style="margin-bottom:40px;" class="row justify-content-around">
                                 <div>
+                                    <p>Organisateur : {{ $name_orga->name }}</p>
                                 </div>
                                 <div>
                                     <p>nombre de participants : {{ $evenement->nbr_participants }}</p>
@@ -52,9 +52,5 @@ dd($name_orga);
         </div>
     </div>
 </div>
-
-
-
-
 
 @endsection
