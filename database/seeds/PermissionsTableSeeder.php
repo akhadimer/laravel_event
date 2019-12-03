@@ -15,10 +15,5 @@ class PermissionsTableSeeder extends Seeder
     {
         Role::create(['name' => 'Admin']);
         Role::create(['name' => 'Inscrit']);
-        Role::create(['name' => 'NonInscrit']);
-        Permission::create(['name' => 'modifications sur évènement']);
-        Permission::create(['name' => 'rejoindre évènement']);
-        Permission::create(['name' => 'supprimer compte']);
-        Permission::create(['name' => 'acceptation à rjd evenement']);
     }
 }

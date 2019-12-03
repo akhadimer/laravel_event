@@ -2,13 +2,6 @@
 
 @section('content')
 
-<?php
-
-use App\Evenement;
-
-$evenements = Evenement::where('user_id', Auth::user()->id)->get();
-?>
-
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">

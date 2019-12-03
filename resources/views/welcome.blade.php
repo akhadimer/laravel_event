@@ -2,13 +2,6 @@
 
 @section('content')
 
-<?php
-
-use App\Evenement;
-
-$evenements = Evenement::orderBy('date', 'desc')->get();
-?>
-
 <div class="container d-flex flex-wrap justify-content-between p-2">
     @foreach($evenements as $evenement)
     <div style="width:250px; height:300px; margin-bottom: 50px;" class="text-center p-2">

@@ -20,6 +20,11 @@ class User extends Authenticatable
         'name', 'email', 'url_image', 'age', 'login', 'password',
     ];
 
+    protected $attributes = [
+        'url_image' => '/',
+        'age' => 0,
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
