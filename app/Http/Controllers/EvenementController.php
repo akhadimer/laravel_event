@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Evenement;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -67,7 +68,9 @@ class EvenementController extends Controller
      */
     public function show(Evenement $evenement)  
     {
+        $name_orga = User::where('id', $evenement->user_id)->get()->first();
         return view('evenements.show', [
+            'name_orga' => $name_orga,
             'evenement' => $evenement
         ]);
     }

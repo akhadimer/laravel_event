@@ -2,13 +2,6 @@
 
 @section('content')
 
-<?php
-
-use App\User;
-
-$name_orga = User::where('id', $evenement->user_id)->get()->first();
-?>
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -16,7 +9,7 @@ $name_orga = User::where('id', $evenement->user_id)->get()->first();
                 <div class="card-header h1 text-center">{{ $evenement->titre }}</div>
                 <div class="card-body">
                     <div class="d-flex justify-content-around">
-                        <div style="">
+                        <div>
                             <div>
                                 <img src="{{ $evenement->url_image }}" class="img-fluid" style="width :100%; margin-bottom :20px;">
                             </div>

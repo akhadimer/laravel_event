@@ -25,4 +25,9 @@ class Evenement extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    public function participations()
+    {
+        return $this->belongsTo('App\Participation');
+    }
 }
