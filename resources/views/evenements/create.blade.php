@@ -31,10 +31,6 @@
                             <label for="description">Description</label>
                             <textarea class="form-control" id="description" rows="3" name="description"></textarea>
                         </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="status" name="status">
-                            <label for="status" class="form-check-label">Privé</label>
-                        </div>
                         <div class="form-group">
                             <label for="url_image">Lien de l'image</label>
                             <input type="text" class="form-control" id="url_image" name="url_image">

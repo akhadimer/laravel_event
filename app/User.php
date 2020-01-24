@@ -21,7 +21,7 @@ class User extends Authenticatable
     ];
 
     protected $attributes = [
-        'url_image' => '/',
+        'url_image' => 'http://placeimg.com/640/480/animals',
         'age' => 0,
     ];
 
@@ -37,11 +37,6 @@ class User extends Authenticatable
     public function evenements()
     {
         return $this->hasMany('App\Evenement', 'user_id');
-    }
-
-    public function participations()
-    {
-        return $this->hasMany('App\Participation');
     }
 
     /**

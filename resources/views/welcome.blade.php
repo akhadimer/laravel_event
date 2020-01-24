@@ -9,7 +9,7 @@
         <div class="h1">
             {{ $evenement->titre }}
         </div>
-        <div style="">
+        <div>
             <img src="{{ $evenement->url_image }}" class="img-fluid" style="width :80%; margin-bottom :20px;">
         </div>
         <div style="margin-bottom:40px;" class="row justify-content-around">
